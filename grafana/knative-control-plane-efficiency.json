@@ -1,20 +1,6 @@
 {
     "__inputs": [],
-    "title": "Knative Serving - Control Plane Efficiency",
-    "uid": "ziwESARnk",
     "__requires": [
-      {
-        "type": "grafana",
-        "id": "grafana",
-        "name": "Grafana",
-        "version": "8.0.1"
-      },
-      {
-        "type": "panel",
-        "id": "graph",
-        "name": "Graph (old)",
-        "version": ""
-      }
     ],
     "annotations": {
       "list": [
@@ -41,7 +27,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "decimals": 2,
         "fill": 1,
         "fillGradient": 0,
@@ -72,7 +58,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -168,7 +154,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "decimals": null,
         "fill": 1,
         "fillGradient": 0,
@@ -199,7 +185,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -295,7 +281,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "decimals": 2,
         "fill": 1,
         "fillGradient": 0,
@@ -326,7 +312,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -398,7 +384,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -428,7 +414,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -499,10 +485,27 @@
     "schemaVersion": 30,
     "style": "dark",
     "tags": [
-      "Knative"
+      "knative"
     ],
     "templating": {
-      "list": []
+      "list": [
+        {
+            "current": {
+                "text": "default",
+                "value": "default"
+            },
+            "hide": 0,
+            "label": "Datasource",
+            "name": "datasource",
+            "options": [
+  
+            ],
+            "query": "prometheus",
+            "refresh": 1,
+            "regex": "",
+            "type": "datasource"
+          }
+      ]
     },
     "time": {
       "from": "now-15m",
@@ -534,5 +537,8 @@
       ]
     },
     "timezone": "",
-    "version": 2
-}
+    "title": "Knative Serving - Control Plane Efficiency",
+    "uid": "ziwESARnk",
+    "version": 3
+  }
+  

@@ -49,7 +49,5 @@ spec:
    ref:
      apiVersion: v1
      kind: Service
-     name: event-display # from pingsource.yaml
-# kubectl logs  -l app=event-display --tail=100
-
+     name: event-display
 ---

@@ -1,8 +1,5 @@
 {
-    "__inputs": [
-    ],
-    "title": "Knative Serving - Control Plane Efficiency",
-    "uid": "ziwESARnk",
+    "__inputs": [],
     "__requires": [
     ],
     "annotations": {
@@ -61,7 +58,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -188,7 +185,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -315,7 +312,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -417,7 +414,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "8.0.1",
+        "pluginVersion": "8.0.5",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -488,7 +485,7 @@
     "schemaVersion": 30,
     "style": "dark",
     "tags": [
-      "Knative"
+      "knative"
     ],
     "templating": {
       "list": [
@@ -501,7 +498,6 @@
           "label": "Datasource",
           "name": "datasource",
           "options": [
-  
           ],
           "query": "prometheus",
           "refresh": 1,
@@ -540,5 +536,7 @@
       ]
     },
     "timezone": "",
-    "version": 2
+    "title": "Knative Serving - Control Plane Efficiency",
+    "uid": "ziwESARnk",
+    "version": 3
 }

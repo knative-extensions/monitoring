@@ -2,12 +2,14 @@
 apiVersion: eventing.knative.dev/v1
 kind: Broker
 metadata:
- name: default
+  name: default
+  namespace: event-example
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-display
+  namespace: event-example
 spec:
   replicas: 1
   selector:
@@ -25,6 +27,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: hello-display
+  namespace: event-example
 spec:
   selector:
     app: hello-display
@@ -37,6 +40,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: goodbye-display
+  namespace: event-example
 spec:
   replicas: 1
   selector:
@@ -55,6 +59,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: goodbye-display
+  namespace: event-example
 spec:
   selector:
     app: goodbye-display

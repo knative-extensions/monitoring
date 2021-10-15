@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: event-display
+  namespace: event-example
 spec:
   replicas: 1
   selector:
@@ -20,6 +21,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: event-display
+  namespace: event-example
 spec:
   selector:
     app: event-display
@@ -32,6 +34,7 @@ apiVersion: sources.knative.dev/v1
 kind: PingSource
 metadata:
   name: test-ping-source
+  namespace: event-example
 spec:
   schedule: "*/1 * * * *"
   contentType: "application/json"

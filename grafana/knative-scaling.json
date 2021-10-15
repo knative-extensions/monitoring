@@ -2,34 +2,8 @@
     "title": "Knative Serving - Scaling Debugging",
     "uid": "Bn1mdAR7z",
     "__inputs": [
-      {
-        "name": "DS_PROMETHEUS",
-        "label": "Prometheus",
-        "description": "",
-        "type": "datasource",
-        "pluginId": "prometheus",
-        "pluginName": "Prometheus"
-      }
     ],
     "__requires": [
-      {
-        "type": "grafana",
-        "id": "grafana",
-        "name": "Grafana",
-        "version": "8.0.1"
-      },
-      {
-        "type": "panel",
-        "id": "graph",
-        "name": "Graph (old)",
-        "version": ""
-      },
-      {
-        "type": "datasource",
-        "id": "prometheus",
-        "name": "Prometheus",
-        "version": "1.0.0"
-      }
     ],
     "annotations": {
       "list": [
@@ -54,7 +28,7 @@
     "panels": [
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -71,7 +45,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -196,7 +170,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -285,7 +259,7 @@
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -302,7 +276,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -409,7 +383,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -512,7 +486,7 @@
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -529,7 +503,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -627,7 +601,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -757,7 +731,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -867,7 +841,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -979,7 +953,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "$datasource",
         "decimals": null,
         "fill": 1,
         "fillGradient": 0,
@@ -1076,7 +1050,7 @@
       },
       {
         "collapsed": true,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1090,7 +1064,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "$datasource",
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1181,7 +1155,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "$datasource",
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1293,7 +1267,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "$datasource",
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
@@ -1410,9 +1384,25 @@
     "templating": {
       "list": [
         {
+          "current": {
+              "text": "default",
+              "value": "default"
+          },
+          "hide": 0,
+          "label": "Datasource",
+          "name": "datasource",
+          "options": [
+  
+          ],
+          "query": "prometheus",
+          "refresh": 1,
+          "regex": "",
+          "type": "datasource"
+        },
+        {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "$datasource",
           "definition": "",
           "description": null,
           "error": null,
@@ -1438,7 +1428,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "$datasource",
           "definition": "",
           "description": null,
           "error": null,
@@ -1464,7 +1454,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "$datasource",
           "definition": "",
           "description": null,
           "error": null,

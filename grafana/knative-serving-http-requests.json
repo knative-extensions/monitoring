@@ -58,7 +58,7 @@
     "panels": [
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -72,7 +72,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -126,7 +126,7 @@
         "repeatDirection": "v",
         "targets": [
           {
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "$datasource",
             "exemplar": true,
             "expr": "round(sum(rate(activator_request_count{namespace_name=\"$namespace\", revision_name=~\"$revision\", configuration_name=~\"$configuration\"}[1m])), 0.001)",
             "format": "time_series",
@@ -142,7 +142,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -212,7 +212,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -278,7 +278,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": null,
+        "datasource": "$datasource",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -344,7 +344,7 @@
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -361,7 +361,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -454,7 +454,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -544,7 +544,7 @@
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -561,7 +561,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -685,7 +685,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -850,9 +850,25 @@
     "templating": {
       "list": [
         {
+          "current": {
+              "text": "default",
+              "value": "default"
+          },
+          "hide": 0,
+          "label": "Datasource",
+          "name": "datasource",
+          "options": [
+  
+          ],
+          "query": "prometheus",
+          "refresh": 1,
+          "regex": "",
+          "type": "datasource"
+        },
+        {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "$datasource",
           "definition": "label_values(activator_request_count{namespace_name!=\"unknown\"}, namespace_name)",
           "description": null,
           "error": null,
@@ -878,7 +894,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "$datasource",
           "definition": "label_values(activator_request_count{namespace_name=\"$namespace\", configuration_name!=\"unknown\"}, configuration_name)",
           "description": null,
           "error": null,
@@ -903,7 +919,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "$datasource",
           "definition": "label_values(activator_request_count{namespace_name=\"$namespace\", configuration_name=~\"$configuration\", revision_name!=\"unknown\"}, revision_name)",
           "description": null,
           "error": null,

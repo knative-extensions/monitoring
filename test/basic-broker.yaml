@@ -62,3 +62,36 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
+    targetPort: 8080
+---
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: goodbye-display
+  namespace: event-example
+spec:
+  broker: default
+  filter:
+    attributes:
+      source: sendoff
+  subscriber:
+    ref:
+     apiVersion: v1
+     kind: Service
+     name: goodbye-display
+---
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: hello-display
+  namespace: event-example
+spec:
+  broker: default
+  filter:
+    attributes:
+      type: greeting
+  subscriber:
+    ref:
+     apiVersion: v1
+     kind: Service
+     name: hello-display

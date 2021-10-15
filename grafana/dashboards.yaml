@@ -2587,688 +2587,458 @@ data:
       }
   knative-reconciler.json: |
     {
-    	"title": "Knative - Reconciler",
-    	"uid": "ORW3HAg7k",
-    	"__inputs": [],
-    	"__requires": [],
     	"annotations": {
-    		"list": [{
-    			"builtIn": 1,
-    			"datasource": "-- Grafana --",
-    			"enable": true,
-    			"hide": true,
-    			"iconColor": "rgba(0, 211, 255, 1)",
-    			"name": "Annotations & Alerts",
-    			"type": "dashboard"
-    		}]
+    	  "list": [
+    		{
+    		  "builtIn": 1,
+    		  "datasource": "-- Grafana --",
+    		  "enable": true,
+    		  "hide": true,
+    		  "iconColor": "rgba(0, 211, 255, 1)",
+    		  "name": "Annotations & Alerts",
+    		  "type": "dashboard"
+    		}
+    	  ]
     	},
     	"description": "Knative - Reconciler",
     	"editable": true,
     	"gnetId": null,
     	"graphTooltip": 0,
-    	"id": null,
-    	"iteration": 1623953244082,
+    	"id": 208,
+    	"iteration": 1629390753397,
     	"links": [],
-    	"panels": [{
-    			"collapsed": false,
-    			"datasource": "$datasource",
-    			"gridPos": {
-    				"h": 1,
-    				"w": 24,
-    				"x": 0,
-    				"y": 0
-    			},
-    			"id": 7,
-    			"panels": [],
-    			"title": "Aggregate",
-    			"type": "row"
+    	"panels": [
+    	  {
+    		"collapsed": false,
+    		"datasource": "$datasource",
+    		"gridPos": {
+    		  "h": 1,
+    		  "w": 24,
+    		  "x": 0,
+    		  "y": 0
     		},
-    		{
-    			"aliasColors": {},
-    			"bars": false,
-    			"dashLength": 10,
-    			"dashes": false,
-    			"datasource": "$datasource",
-    			"fill": 1,
-    			"fillGradient": 0,
-    			"gridPos": {
-    				"h": 9,
-    				"w": 12,
-    				"x": 0,
-    				"y": 1
-    			},
-    			"hiddenSeries": false,
-    			"id": 10,
-    			"legend": {
-    				"alignAsTable": false,
-    				"avg": false,
-    				"current": false,
-    				"hideEmpty": true,
-    				"hideZero": false,
-    				"max": false,
-    				"min": false,
-    				"rightSide": false,
-    				"show": true,
-    				"total": false,
-    				"values": false
-    			},
-    			"lines": true,
-    			"linewidth": 1,
-    			"links": [],
-    			"nullPointMode": "null",
-    			"options": {
-    				"alertThreshold": true
-    			},
-    			"percentage": false,
-    			"pluginVersion": "8.0.1",
-    			"pointradius": 5,
-    			"points": false,
-    			"renderer": "flot",
-    			"seriesOverrides": [],
-    			"spaceLength": 10,
-    			"stack": false,
-    			"steppedLine": true,
-    			"targets": [{
-    				"expr": "sum by (reconciler)(60 * rate(controller_reconcile_count[1m]))",
-    				"format": "time_series",
-    				"instant": false,
-    				"interval": "",
-    				"intervalFactor": 1,
-    				"legendFormat": "{{reconciler}}",
-    				"refId": "A"
-    			}],
-    			"thresholds": [],
-    			"timeFrom": null,
-    			"timeRegions": [],
-    			"timeShift": null,
-    			"title": "Reconcile Count (per min)",
-    			"tooltip": {
-    				"shared": true,
-    				"sort": 0,
-    				"value_type": "individual"
-    			},
-    			"type": "graph",
-    			"xaxis": {
-    				"buckets": null,
-    				"mode": "time",
-    				"name": null,
-    				"show": true,
-    				"values": []
-    			},
-    			"yaxes": [{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				},
-    				{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				}
-    			],
-    			"yaxis": {
-    				"align": false,
-    				"alignLevel": null
-    			}
+    		"id": 7,
+    		"panels": [],
+    		"title": "Aggregate",
+    		"type": "row"
+    	  },
+    	  {
+    		"aliasColors": {},
+    		"bars": false,
+    		"dashLength": 10,
+    		"dashes": false,
+    		"datasource": "$datasource",
+    		"fill": 1,
+    		"fillGradient": 0,
+    		"gridPos": {
+    		  "h": 9,
+    		  "w": 12,
+    		  "x": 0,
+    		  "y": 1
     		},
-    		{
-    			"collapsed": false,
-    			"datasource": "$datasource",
-    			"gridPos": {
-    				"h": 1,
-    				"w": 24,
-    				"x": 0,
-    				"y": 10
-    			},
-    			"id": 5,
-    			"panels": [],
-    			"title": "Per Reconciler",
-    			"type": "row"
+    		"hiddenSeries": false,
+    		"id": 10,
+    		"legend": {
+    		  "alignAsTable": false,
+    		  "avg": false,
+    		  "current": false,
+    		  "hideEmpty": true,
+    		  "hideZero": false,
+    		  "max": false,
+    		  "min": false,
+    		  "rightSide": false,
+    		  "show": true,
+    		  "total": false,
+    		  "values": false
     		},
-    		{
-    			"aliasColors": {},
-    			"bars": false,
-    			"dashLength": 10,
-    			"dashes": false,
-    			"datasource": "$datasource",
-    			"fill": 1,
-    			"fillGradient": 0,
-    			"gridPos": {
-    				"h": 9,
-    				"w": 12,
-    				"x": 0,
-    				"y": 11
-    			},
-    			"hiddenSeries": false,
-    			"id": 2,
-    			"legend": {
-    				"alignAsTable": false,
-    				"avg": false,
-    				"current": false,
-    				"hideEmpty": true,
-    				"hideZero": false,
-    				"max": false,
-    				"min": false,
-    				"rightSide": false,
-    				"show": false,
-    				"total": false,
-    				"values": false
-    			},
-    			"lines": true,
-    			"linewidth": 1,
-    			"links": [],
-    			"nullPointMode": "null",
-    			"options": {
-    				"alertThreshold": true
-    			},
-    			"percentage": false,
-    			"pluginVersion": "8.0.1",
-    			"pointradius": 5,
-    			"points": false,
-    			"renderer": "flot",
-    			"seriesOverrides": [],
-    			"spaceLength": 10,
-    			"stack": false,
-    			"steppedLine": true,
-    			"targets": [{
-    				"expr": "sum(60 * rate(controller_reconcile_count{reconciler=\"$reconciler\"}[1m]))",
-    				"format": "time_series",
-    				"instant": false,
-    				"interval": "",
-    				"intervalFactor": 1,
-    				"legendFormat": "{{reconciler}}",
-    				"refId": "A"
-    			}],
-    			"thresholds": [],
-    			"timeFrom": null,
-    			"timeRegions": [],
-    			"timeShift": null,
-    			"title": "$reconciler Reconcile Count (per min)",
-    			"tooltip": {
-    				"shared": true,
-    				"sort": 0,
-    				"value_type": "individual"
-    			},
-    			"type": "graph",
-    			"xaxis": {
-    				"buckets": null,
-    				"mode": "time",
-    				"name": null,
-    				"show": true,
-    				"values": []
-    			},
-    			"yaxes": [{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				},
-    				{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				}
-    			],
-    			"yaxis": {
-    				"align": false,
-    				"alignLevel": null
-    			}
+    		"lines": true,
+    		"linewidth": 1,
+    		"links": [],
+    		"nullPointMode": "null",
+    		"options": {
+    		  "alertThreshold": true
     		},
-    		{
-    			"aliasColors": {},
-    			"bars": false,
-    			"dashLength": 10,
-    			"dashes": false,
-    			"datasource": "$datasource",
-    			"fill": 1,
-    			"fillGradient": 0,
-    			"gridPos": {
-    				"h": 9,
-    				"w": 12,
-    				"x": 12,
-    				"y": 11
-    			},
-    			"hiddenSeries": false,
-    			"id": 11,
-    			"legend": {
-    				"alignAsTable": false,
-    				"avg": false,
-    				"current": false,
-    				"hideEmpty": true,
-    				"hideZero": false,
-    				"max": false,
-    				"min": false,
-    				"rightSide": false,
-    				"show": true,
-    				"total": false,
-    				"values": false
-    			},
-    			"lines": true,
-    			"linewidth": 1,
-    			"links": [],
-    			"nullPointMode": "null",
-    			"options": {
-    				"alertThreshold": true
-    			},
-    			"percentage": false,
-    			"pluginVersion": "8.0.1",
-    			"pointradius": 5,
-    			"points": false,
-    			"renderer": "flot",
-    			"seriesOverrides": [],
-    			"spaceLength": 10,
-    			"stack": false,
-    			"steppedLine": true,
-    			"targets": [{
-    					"expr": "histogram_quantile(0.99, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\"}[1m])) by (le))",
-    					"format": "time_series",
-    					"instant": false,
-    					"interval": "",
-    					"intervalFactor": 1,
-    					"legendFormat": "99th",
-    					"refId": "A"
-    				},
-    				{
-    					"expr": "histogram_quantile(0.90, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\"}[1m])) by (le))",
-    					"format": "time_series",
-    					"intervalFactor": 1,
-    					"legendFormat": "90th",
-    					"refId": "B"
-    				},
-    				{
-    					"expr": "histogram_quantile(0.50, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\"}[1m])) by (le))",
-    					"format": "time_series",
-    					"intervalFactor": 1,
-    					"legendFormat": "50th",
-    					"refId": "C"
-    				}
-    			],
-    			"thresholds": [],
-    			"timeFrom": null,
-    			"timeRegions": [],
-    			"timeShift": null,
-    			"title": "$reconciler Reconcile Latency Percentiles",
-    			"tooltip": {
-    				"shared": true,
-    				"sort": 0,
-    				"value_type": "individual"
-    			},
-    			"type": "graph",
-    			"xaxis": {
-    				"buckets": null,
-    				"mode": "time",
-    				"name": null,
-    				"show": true,
-    				"values": []
-    			},
-    			"yaxes": [{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				},
-    				{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				}
-    			],
-    			"yaxis": {
-    				"align": false,
-    				"alignLevel": null
-    			}
+    		"percentage": false,
+    		"pluginVersion": "8.0.5",
+    		"pointradius": 5,
+    		"points": false,
+    		"renderer": "flot",
+    		"seriesOverrides": [],
+    		"spaceLength": 10,
+    		"stack": false,
+    		"steppedLine": true,
+    		"targets": [
+    		  {
+    			"expr": "sum by (reconciler)(60 * rate(controller_reconcile_count[1m]))",
+    			"format": "time_series",
+    			"instant": false,
+    			"interval": "",
+    			"intervalFactor": 1,
+    			"legendFormat": "{{reconciler}}",
+    			"refId": "A"
+    		  }
+    		],
+    		"thresholds": [],
+    		"timeFrom": null,
+    		"timeRegions": [],
+    		"timeShift": null,
+    		"title": "Reconcile Count (per min)",
+    		"tooltip": {
+    		  "shared": true,
+    		  "sort": 0,
+    		  "value_type": "individual"
     		},
-    		{
-    			"collapsed": false,
-    			"datasource": "$datasource",
-    			"gridPos": {
-    				"h": 1,
-    				"w": 24,
-    				"x": 0,
-    				"y": 20
-    			},
-    			"id": 9,
-    			"panels": [],
-    			"title": "Per Reconciler & Key",
-    			"type": "row"
+    		"type": "graph",
+    		"xaxis": {
+    		  "buckets": null,
+    		  "mode": "time",
+    		  "name": null,
+    		  "show": true,
+    		  "values": []
     		},
-    		{
-    			"aliasColors": {},
-    			"bars": false,
-    			"dashLength": 10,
-    			"dashes": false,
-    			"datasource": "$datasource",
-    			"fill": 1,
-    			"fillGradient": 0,
-    			"gridPos": {
-    				"h": 9,
-    				"w": 12,
-    				"x": 0,
-    				"y": 21
-    			},
-    			"hiddenSeries": false,
-    			"id": 12,
-    			"legend": {
-    				"alignAsTable": false,
-    				"avg": false,
-    				"current": false,
-    				"hideEmpty": true,
-    				"hideZero": false,
-    				"max": false,
-    				"min": false,
-    				"rightSide": false,
-    				"show": false,
-    				"total": false,
-    				"values": false
-    			},
-    			"lines": true,
-    			"linewidth": 1,
-    			"links": [],
-    			"nullPointMode": "null",
-    			"options": {
-    				"alertThreshold": true
-    			},
-    			"percentage": false,
-    			"pluginVersion": "8.0.1",
-    			"pointradius": 5,
-    			"points": false,
-    			"renderer": "flot",
-    			"seriesOverrides": [],
-    			"spaceLength": 10,
-    			"stack": false,
-    			"steppedLine": true,
-    			"targets": [{
-    				"expr": "sum(60 * rate(controller_reconcile_count{reconciler=\"$reconciler\", key=\"$key\"}[1m]))",
-    				"format": "time_series",
-    				"instant": false,
-    				"interval": "",
-    				"intervalFactor": 1,
-    				"legendFormat": "{{reconciler}}",
-    				"refId": "A"
-    			}],
-    			"thresholds": [],
-    			"timeFrom": null,
-    			"timeRegions": [],
-    			"timeShift": null,
-    			"title": "$reconciler/$key Reconcile Count (per min)",
-    			"tooltip": {
-    				"shared": true,
-    				"sort": 0,
-    				"value_type": "individual"
-    			},
-    			"type": "graph",
-    			"xaxis": {
-    				"buckets": null,
-    				"mode": "time",
-    				"name": null,
-    				"show": true,
-    				"values": []
-    			},
-    			"yaxes": [{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				},
-    				{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				}
-    			],
-    			"yaxis": {
-    				"align": false,
-    				"alignLevel": null
-    			}
-    		},
-    		{
-    			"aliasColors": {},
-    			"bars": false,
-    			"dashLength": 10,
-    			"dashes": false,
-    			"datasource": "$datasource",
-    			"fill": 1,
-    			"fillGradient": 0,
-    			"gridPos": {
-    				"h": 9,
-    				"w": 12,
-    				"x": 12,
-    				"y": 21
-    			},
-    			"hiddenSeries": false,
-    			"id": 13,
-    			"legend": {
-    				"alignAsTable": false,
-    				"avg": false,
-    				"current": false,
-    				"hideEmpty": true,
-    				"hideZero": false,
-    				"max": false,
-    				"min": false,
-    				"rightSide": false,
-    				"show": true,
-    				"total": false,
-    				"values": false
-    			},
-    			"lines": true,
-    			"linewidth": 1,
-    			"links": [],
-    			"nullPointMode": "null",
-    			"options": {
-    				"alertThreshold": true
-    			},
-    			"percentage": false,
-    			"pluginVersion": "8.0.1",
-    			"pointradius": 5,
-    			"points": false,
-    			"renderer": "flot",
-    			"seriesOverrides": [],
-    			"spaceLength": 10,
-    			"stack": false,
-    			"steppedLine": true,
-    			"targets": [{
-    					"expr": "histogram_quantile(0.99, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\", key=\"$key\"}[1m])) by (le))",
-    					"format": "time_series",
-    					"instant": false,
-    					"interval": "",
-    					"intervalFactor": 1,
-    					"legendFormat": "99th",
-    					"refId": "A"
-    				},
-    				{
-    					"expr": "histogram_quantile(0.90, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\", key=\"$key\"}[1m])) by (le))",
-    					"format": "time_series",
-    					"intervalFactor": 1,
-    					"legendFormat": "90th",
-    					"refId": "B"
-    				},
-    				{
-    					"expr": "histogram_quantile(0.50, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\", key=\"$key\"}[1m])) by (le))",
-    					"format": "time_series",
-    					"intervalFactor": 1,
-    					"legendFormat": "50th",
-    					"refId": "C"
-    				}
-    			],
-    			"thresholds": [],
-    			"timeFrom": null,
-    			"timeRegions": [],
-    			"timeShift": null,
-    			"title": "$reconciler/$key Reconcile Latency Percentiles",
-    			"tooltip": {
-    				"shared": true,
-    				"sort": 0,
-    				"value_type": "individual"
-    			},
-    			"type": "graph",
-    			"xaxis": {
-    				"buckets": null,
-    				"mode": "time",
-    				"name": null,
-    				"show": true,
-    				"values": []
-    			},
-    			"yaxes": [{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				},
-    				{
-    					"format": "short",
-    					"label": null,
-    					"logBase": 1,
-    					"max": null,
-    					"min": null,
-    					"show": true
-    				}
-    			],
-    			"yaxis": {
-    				"align": false,
-    				"alignLevel": null
-    			}
+    		"yaxes": [
+    		  {
+    			"format": "short",
+    			"label": null,
+    			"logBase": 1,
+    			"max": null,
+    			"min": null,
+    			"show": true
+    		  },
+    		  {
+    			"format": "short",
+    			"label": null,
+    			"logBase": 1,
+    			"max": null,
+    			"min": null,
+    			"show": true
+    		  }
+    		],
+    		"yaxis": {
+    		  "align": false,
+    		  "alignLevel": null
     		}
+    	  },
+    	  {
+    		"collapsed": false,
+    		"datasource": "$datasource",
+    		"gridPos": {
+    		  "h": 1,
+    		  "w": 24,
+    		  "x": 0,
+    		  "y": 10
+    		},
+    		"id": 5,
+    		"panels": [],
+    		"title": "Per Reconciler",
+    		"type": "row"
+    	  },
+    	  {
+    		"aliasColors": {},
+    		"bars": false,
+    		"dashLength": 10,
+    		"dashes": false,
+    		"datasource": "$datasource",
+    		"fill": 1,
+    		"fillGradient": 0,
+    		"gridPos": {
+    		  "h": 9,
+    		  "w": 12,
+    		  "x": 0,
+    		  "y": 11
+    		},
+    		"hiddenSeries": false,
+    		"id": 2,
+    		"legend": {
+    		  "alignAsTable": false,
+    		  "avg": false,
+    		  "current": false,
+    		  "hideEmpty": true,
+    		  "hideZero": false,
+    		  "max": false,
+    		  "min": false,
+    		  "rightSide": false,
+    		  "show": false,
+    		  "total": false,
+    		  "values": false
+    		},
+    		"lines": true,
+    		"linewidth": 1,
+    		"links": [],
+    		"nullPointMode": "null",
+    		"options": {
+    		  "alertThreshold": true
+    		},
+    		"percentage": false,
+    		"pluginVersion": "8.0.5",
+    		"pointradius": 5,
+    		"points": false,
+    		"renderer": "flot",
+    		"seriesOverrides": [],
+    		"spaceLength": 10,
+    		"stack": false,
+    		"steppedLine": true,
+    		"targets": [
+    		  {
+    			"expr": "sum(60 * rate(controller_reconcile_count{reconciler=\"$reconciler\"}[1m]))",
+    			"format": "time_series",
+    			"instant": false,
+    			"interval": "",
+    			"intervalFactor": 1,
+    			"legendFormat": "{{reconciler}}",
+    			"refId": "A"
+    		  }
+    		],
+    		"thresholds": [],
+    		"timeFrom": null,
+    		"timeRegions": [],
+    		"timeShift": null,
+    		"title": "$reconciler Reconcile Count (per min)",
+    		"tooltip": {
+    		  "shared": true,
+    		  "sort": 0,
+    		  "value_type": "individual"
+    		},
+    		"type": "graph",
+    		"xaxis": {
+    		  "buckets": null,
+    		  "mode": "time",
+    		  "name": null,
+    		  "show": true,
+    		  "values": []
+    		},
+    		"yaxes": [
+    		  {
+    			"format": "short",
+    			"label": null,
+    			"logBase": 1,
+    			"max": null,
+    			"min": null,
+    			"show": true
+    		  },
+    		  {
+    			"format": "short",
+    			"label": null,
+    			"logBase": 1,
+    			"max": null,
+    			"min": null,
+    			"show": true
+    		  }
+    		],
+    		"yaxis": {
+    		  "align": false,
+    		  "alignLevel": null
+    		}
+    	  },
+    	  {
+    		"aliasColors": {},
+    		"bars": false,
+    		"dashLength": 10,
+    		"dashes": false,
+    		"datasource": "$datasource",
+    		"fill": 1,
+    		"fillGradient": 0,
+    		"gridPos": {
+    		  "h": 9,
+    		  "w": 12,
+    		  "x": 12,
+    		  "y": 11
+    		},
+    		"hiddenSeries": false,
+    		"id": 11,
+    		"legend": {
+    		  "alignAsTable": false,
+    		  "avg": false,
+    		  "current": false,
+    		  "hideEmpty": true,
+    		  "hideZero": false,
+    		  "max": false,
+    		  "min": false,
+    		  "rightSide": false,
+    		  "show": true,
+    		  "total": false,
+    		  "values": false
+    		},
+    		"lines": true,
+    		"linewidth": 1,
+    		"links": [],
+    		"nullPointMode": "null",
+    		"options": {
+    		  "alertThreshold": true
+    		},
+    		"percentage": false,
+    		"pluginVersion": "8.0.5",
+    		"pointradius": 5,
+    		"points": false,
+    		"renderer": "flot",
+    		"seriesOverrides": [],
+    		"spaceLength": 10,
+    		"stack": false,
+    		"steppedLine": true,
+    		"targets": [
+    		  {
+    			"expr": "histogram_quantile(0.99, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\"}[1m])) by (le))",
+    			"format": "time_series",
+    			"instant": false,
+    			"interval": "",
+    			"intervalFactor": 1,
+    			"legendFormat": "99th",
+    			"refId": "A"
+    		  },
+    		  {
+    			"expr": "histogram_quantile(0.90, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\"}[1m])) by (le))",
+    			"format": "time_series",
+    			"intervalFactor": 1,
+    			"legendFormat": "90th",
+    			"refId": "B"
+    		  },
+    		  {
+    			"expr": "histogram_quantile(0.50, sum(rate(controller_reconcile_latency_bucket{reconciler=\"$reconciler\"}[1m])) by (le))",
+    			"format": "time_series",
+    			"intervalFactor": 1,
+    			"legendFormat": "50th",
+    			"refId": "C"
+    		  }
+    		],
+    		"thresholds": [],
+    		"timeFrom": null,
+    		"timeRegions": [],
+    		"timeShift": null,
+    		"title": "$reconciler Reconcile Latency Percentiles",
+    		"tooltip": {
+    		  "shared": true,
+    		  "sort": 0,
+    		  "value_type": "individual"
+    		},
+    		"type": "graph",
+    		"xaxis": {
+    		  "buckets": null,
+    		  "mode": "time",
+    		  "name": null,
+    		  "show": true,
+    		  "values": []
+    		},
+    		"yaxes": [
+    		  {
+    			"format": "short",
+    			"label": null,
+    			"logBase": 1,
+    			"max": null,
+    			"min": null,
+    			"show": true
+    		  },
+    		  {
+    			"format": "short",
+    			"label": null,
+    			"logBase": 1,
+    			"max": null,
+    			"min": null,
+    			"show": true
+    		  }
+    		],
+    		"yaxis": {
+    		  "align": false,
+    		  "alignLevel": null
+    		}
+    	  }
     	],
     	"refresh": "5s",
     	"schemaVersion": 30,
     	"style": "dark",
     	"tags": [
-    		"knative"
+    	  "knative"
     	],
     	"templating": {
-    		"list": [
-    			{
-    				"current": {
-    					"text": "default",
-    					"value": "default"
-    				},
-    				"hide": 0,
-    				"label": "Datasource",
-    				"name": "datasource",
-    				"options": [
-    		
-    				],
-    				"query": "prometheus",
-    				"refresh": 1,
-    				"regex": "",
-    				"type": "datasource"
-    			},			
-    			{
-    				"allValue": null,
-    				"current": {},
-    				"datasource": "$datasource",
-    				"definition": "label_values(controller_reconcile_count, reconciler)",
-    				"description": null,
-    				"error": null,
-    				"hide": 0,
-    				"includeAll": false,
-    				"label": "Reconciler",
-    				"multi": false,
-    				"name": "reconciler",
-    				"options": [],
-    				"query": {
-    					"query": "label_values(controller_reconcile_count, reconciler)",
-    					"refId": "StandardVariableQuery"
-    				},
-    				"refresh": 1,
-    				"regex": "",
-    				"skipUrlSync": false,
-    				"sort": 0,
-    				"tagValuesQuery": "",
-    				"tagsQuery": "",
-    				"type": "query",
-    				"useTags": false
-    			},
-    			{
-    				"allValue": null,
-    				"current": {},
-    				"datasource": "$datasource",
-    				"definition": "label_values(controller_reconcile_count{reconciler=\"$reconciler\"}, key)",
-    				"description": null,
-    				"error": null,
-    				"hide": 0,
-    				"includeAll": false,
-    				"label": "Key",
-    				"multi": false,
-    				"name": "key",
-    				"options": [],
-    				"query": {
-    					"query": "label_values(controller_reconcile_count{reconciler=\"$reconciler\"}, key)",
-    					"refId": "StandardVariableQuery"
-    				},
-    				"refresh": 1,
-    				"regex": "",
-    				"skipUrlSync": false,
-    				"sort": 1,
-    				"tagValuesQuery": "",
-    				"tagsQuery": "",
-    				"type": "query",
-    				"useTags": false
-    			}
-    		]
+    	  "list": [
+    		{
+    		  "current": {
+    			"selected": false,
+    			"text": "default",
+    			"value": "default"
+    		  },
+    		  "description": null,
+    		  "error": null,
+    		  "hide": 0,
+    		  "includeAll": false,
+    		  "label": "Datasource",
+    		  "multi": false,
+    		  "name": "datasource",
+    		  "options": [],
+    		  "query": "prometheus",
+    		  "refresh": 1,
+    		  "regex": "",
+    		  "skipUrlSync": false,
+    		  "type": "datasource"
+    		},
+    		{
+    		  "allValue": null,
+    		  "current": {
+    			"selected": false,
+    			"text": "knative.dev.serving.pkg.reconciler.configuration.Reconciler",
+    			"value": "knative.dev.serving.pkg.reconciler.configuration.Reconciler"
+    		  },
+    		  "datasource": "$datasource",
+    		  "definition": "label_values(controller_reconcile_count{reconciler=~\".+\"}, reconciler)",
+    		  "description": null,
+    		  "error": null,
+    		  "hide": 0,
+    		  "includeAll": false,
+    		  "label": "Reconciler",
+    		  "multi": false,
+    		  "name": "reconciler",
+    		  "options": [],
+    		  "query": {
+    			"query": "label_values(controller_reconcile_count{reconciler=~\".+\"}, reconciler)",
+    			"refId": "StandardVariableQuery"
+    		  },
+    		  "refresh": 1,
+    		  "regex": "",
+    		  "skipUrlSync": false,
+    		  "sort": 0,
+    		  "tagValuesQuery": "",
+    		  "tagsQuery": "",
+    		  "type": "query",
+    		  "useTags": false
+    		}
+    	  ]
     	},
     	"time": {
-    		"from": "now-15m",
-    		"to": "now"
+    	  "from": "now-15m",
+    	  "to": "now"
     	},
     	"timepicker": {
-    		"refresh_intervals": [
-    			"5s",
-    			"10s",
-    			"30s",
-    			"1m",
-    			"5m",
-    			"15m",
-    			"30m",
-    			"1h",
-    			"2h",
-    			"1d"
-    		],
-    		"time_options": [
-    			"5m",
-    			"15m",
-    			"1h",
-    			"6h",
-    			"12h",
-    			"24h",
-    			"2d",
-    			"7d",
-    			"30d"
-    		]
+    	  "refresh_intervals": [
+    		"5s",
+    		"10s",
+    		"30s",
+    		"1m",
+    		"5m",
+    		"15m",
+    		"30m",
+    		"1h",
+    		"2h",
+    		"1d"
+    	  ],
+    	  "time_options": [
+    		"5m",
+    		"15m",
+    		"1h",
+    		"6h",
+    		"12h",
+    		"24h",
+    		"2d",
+    		"7d",
+    		"30d"
+    	  ]
     	},
     	"timezone": "",
-    	"version": 2
+    	"title": "Knative - Reconciler",
+    	"uid": "DSHrKxnnz",
+    	"version": 3
     }
-    
   knative-control-plane-efficiency.json: |
     {
-        "__inputs": [
-        ],
-        "title": "Knative Serving - Control Plane Efficiency",
-        "uid": "ziwESARnk",
+        "__inputs": [],
         "__requires": [
         ],
         "annotations": {
@@ -3327,7 +3097,7 @@ data:
               "alertThreshold": true
             },
             "percentage": false,
-            "pluginVersion": "8.0.1",
+            "pluginVersion": "8.0.5",
             "pointradius": 5,
             "points": false,
             "renderer": "flot",
@@ -3454,7 +3224,7 @@ data:
               "alertThreshold": true
             },
             "percentage": false,
-            "pluginVersion": "8.0.1",
+            "pluginVersion": "8.0.5",
             "pointradius": 5,
             "points": false,
             "renderer": "flot",
@@ -3581,7 +3351,7 @@ data:
               "alertThreshold": true
             },
             "percentage": false,
-            "pluginVersion": "8.0.1",
+            "pluginVersion": "8.0.5",
             "pointradius": 5,
             "points": false,
             "renderer": "flot",
@@ -3683,7 +3453,7 @@ data:
               "alertThreshold": true
             },
             "percentage": false,
-            "pluginVersion": "8.0.1",
+            "pluginVersion": "8.0.5",
             "pointradius": 5,
             "points": false,
             "renderer": "flot",
@@ -3754,7 +3524,7 @@ data:
         "schemaVersion": 30,
         "style": "dark",
         "tags": [
-          "Knative"
+          "knative"
         ],
         "templating": {
           "list": [
@@ -3767,7 +3537,6 @@ data:
               "label": "Datasource",
               "name": "datasource",
               "options": [
-      
               ],
               "query": "prometheus",
               "refresh": 1,
@@ -3806,8 +3575,11 @@ data:
           ]
         },
         "timezone": "",
-        "version": 2
+        "title": "Knative Serving - Control Plane Efficiency",
+        "uid": "ziwESARnk",
+        "version": 3
     }
+    
   knative-scaling.json: |
     {
         "title": "Knative Serving - Scaling Debugging",
@@ -4538,328 +4310,6 @@ data:
             }
           },
           {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "$datasource",
-            "fill": 1,
-            "fillGradient": 0,
-            "gridPos": {
-              "h": 9,
-              "w": 24,
-              "x": 0,
-              "y": 51
-            },
-            "hiddenSeries": false,
-            "id": 9,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "options": {
-              "alertThreshold": true
-            },
-            "percentage": false,
-            "pluginVersion": "8.0.1",
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": true,
-            "targets": [
-              {
-                "exemplar": true,
-                "expr": "sum(autoscaler_stable_requests_per_second{namespace_name=\"$namespace\", configuration_name=\"$configuration\", revision_name=\"$revision\"})",
-                "format": "time_series",
-                "interval": "1s",
-                "intervalFactor": 1,
-                "legendFormat": "Average RPS",
-                "refId": "A"
-              },
-              {
-                "expr": "sum(autoscaler_panic_requests_per_second{namespace_name=\"$namespace\", configuration_name=\"$configuration\", revision_name=\"$revision\"})",
-                "format": "time_series",
-                "interval": "1s",
-                "intervalFactor": 1,
-                "legendFormat": "Average Panic RPS",
-                "refId": "B"
-              },
-              {
-                "exemplar": true,
-                "expr": "sum(autoscaler_target_requests_per_second{namespace_name=\"$namespace\", configuration_name=\"$configuration\", revision_name=\"$revision\"})",
-                "format": "time_series",
-                "interval": "1s",
-                "intervalFactor": 1,
-                "legendFormat": "Target RPS",
-                "refId": "C"
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "Observed RPS",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": false
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "$datasource",
-            "fill": 1,
-            "fillGradient": 0,
-            "gridPos": {
-              "h": 9,
-              "w": 24,
-              "x": 0,
-              "y": 60
-            },
-            "hiddenSeries": false,
-            "id": 30,
-            "legend": {
-              "avg": true,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": true,
-              "total": false,
-              "values": true
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "options": {
-              "alertThreshold": true
-            },
-            "percentage": false,
-            "pluginVersion": "8.0.1",
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "label_replace(histogram_quantile(0.50, sum(rate(autoscaler_scrape_time_bucket{namespace_name=\"$namespace\", configuration_name=~\"$configuration\",revision_name=~\"$revision\"}[1m])) by (revision_name, le)), \"revision_name\", \"$2\", \"revision_name\", \"$configuration(-+)(.*)\")",
-                "format": "time_series",
-                "intervalFactor": 1,
-                "legendFormat": "{{ revision_name }} (p50)",
-                "refId": "A"
-              },
-              {
-                "expr": "label_replace(histogram_quantile(0.90, sum(rate(autoscaler_scrape_time_bucket{namespace_name=\"$namespace\", configuration_name=~\"$configuration\",revision_name=~\"$revision\"}[1m])) by (revision_name, le)), \"revision_name\", \"$2\", \"revision_name\", \"$configuration(-+)(.*)\")",
-                "format": "time_series",
-                "intervalFactor": 1,
-                "legendFormat": "{{ revision_name }} (p90)",
-                "refId": "B"
-              },
-              {
-                "expr": "label_replace(histogram_quantile(0.95, sum(rate(autoscaler_scrape_time_bucket{namespace_name=\"$namespace\", configuration_name=~\"$configuration\",revision_name=~\"$revision\"}[1m])) by (revision_name, le)), \"revision_name\", \"$2\", \"revision_name\", \"$configuration(-+)(.*)\")",
-                "format": "time_series",
-                "intervalFactor": 1,
-                "legendFormat": "{{ revision_name }} (p95)",
-                "refId": "C"
-              },
-              {
-                "expr": "label_replace(histogram_quantile(0.99, sum(rate(autoscaler_scrape_time_bucket{namespace_name=\"$namespace\", configuration_name=~\"$configuration\",revision_name=~\"$revision\"}[1m])) by (revision_name, le)), \"revision_name\", \"$2\", \"revision_name\", \"$configuration(-+)(.*)\")",
-                "format": "time_series",
-                "intervalFactor": 1,
-                "legendFormat": "{{ revision_name }} (p99)",
-                "refId": "D"
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "Scrape time by revision",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "ms",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "$datasource",
-            "decimals": null,
-            "fill": 1,
-            "fillGradient": 0,
-            "gridPos": {
-              "h": 9,
-              "w": 24,
-              "x": 0,
-              "y": 69
-            },
-            "hiddenSeries": false,
-            "id": 12,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "hideZero": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "options": {
-              "alertThreshold": true
-            },
-            "percentage": false,
-            "pluginVersion": "8.0.1",
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [
-              {
-                "alias": "Panic Mode",
-                "color": "#e24d42",
-                "linewidth": 2,
-                "yaxis": 2
-              }
-            ],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": true,
-            "targets": [
-              {
-                "expr": "sum(autoscaler_panic_mode{namespace_name=\"$namespace\", configuration_name=\"$configuration\", revision_name=\"$revision\"} )",
-                "format": "time_series",
-                "intervalFactor": 1,
-                "legendFormat": "Panic Mode",
-                "refId": "A"
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "Panic Mode",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": "1.0",
-                "min": "0",
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": false
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          },
-          {
             "collapsed": true,
             "datasource": "$datasource",
             "gridPos": {
@@ -5190,7 +4640,7 @@ data:
         "schemaVersion": 30,
         "style": "dark",
         "tags": [
-          "Knative"
+          "knative"
         ],
         "templating": {
           "list": [
@@ -5203,7 +4653,6 @@ data:
               "label": "Datasource",
               "name": "datasource",
               "options": [
-      
               ],
               "query": "prometheus",
               "refresh": 1,
@@ -5320,5 +4769,5 @@ data:
           ]
         },
         "timezone": "",
-        "version": 2
+        "version": 3
     }

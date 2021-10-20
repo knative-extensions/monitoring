@@ -1,5 +1,4 @@
 ---
-# Source: knative/templates/knative-dashboards.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -1244,7 +1243,6 @@ data:
       "version": 6
     }
 ---
-# Source: knative/templates/knative-dashboards.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:

@@ -15,7 +15,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-rm -rf charts/dashboards
-mkdir charts/dashboards
-cp -r ../grafana/ charts/dashboards
-helm template charts/ > ../grafana/dashboards.yaml
+rm -rf hack/charts/dashboards
+mkdir hack/charts/dashboards
+cp -r grafana/ hack/charts/dashboards
+helm template hack/charts/ > grafana/dashboards.yaml
+sed -i.bak '/knative-dashboards.yaml/d' grafana/dashboards.yaml
+rm -rf grafana/*.bak

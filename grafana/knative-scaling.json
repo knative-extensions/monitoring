@@ -28,7 +28,7 @@
     "panels": [
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -259,7 +259,7 @@
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -486,7 +486,7 @@
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -728,7 +728,7 @@
       },
       {
         "collapsed": true,
-        "datasource": null,
+        "datasource": "$datasource",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1053,7 +1053,7 @@
         "type": "row"
       }
     ],
-    "refresh": false,
+    "refresh": "5s",
     "schemaVersion": 30,
     "style": "dark",
     "tags": [
@@ -1070,7 +1070,6 @@
           "label": "Datasource",
           "name": "datasource",
           "options": [
-
           ],
           "query": "prometheus",
           "refresh": 1,

@@ -490,21 +490,20 @@
     "templating": {
       "list": [
         {
-            "current": {
-                "text": "default",
-                "value": "default"
-            },
-            "hide": 0,
-            "label": "Datasource",
-            "name": "datasource",
-            "options": [
-  
-            ],
-            "query": "prometheus",
-            "refresh": 1,
-            "regex": "",
-            "type": "datasource"
-          }
+          "current": {
+              "text": "default",
+              "value": "default"
+          },
+          "hide": 0,
+          "label": "Datasource",
+          "name": "datasource",
+          "options": [
+          ],
+          "query": "prometheus",
+          "refresh": 1,
+          "regex": "",
+          "type": "datasource"
+        }
       ]
     },
     "time": {

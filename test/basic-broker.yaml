@@ -1,0 +1,101 @@
+#From https://knative.dev/docs/eventing/getting-started/
+apiVersion: eventing.knative.dev/v1
+kind: Broker
+metadata:
+  name: default
+  namespace: event-example
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-display
+  namespace: event-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app: hello-display
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: event-display
+          image: gcr.io/knative-releases/knative.dev/eventing/cmd/event_display
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-display
+  namespace: event-example
+spec:
+  selector:
+    app: hello-display
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goodbye-display
+  namespace: event-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app: goodbye-display
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: event-display
+          # Source code: https://github.com/knative/eventing/tree/main/cmd/event_display
+          image: gcr.io/knative-releases/knative.dev/eventing/cmd/event_display
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: goodbye-display
+  namespace: event-example
+spec:
+  selector:
+    app: goodbye-display
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: goodbye-display
+  namespace: event-example
+spec:
+  broker: default
+  filter:
+    attributes:
+      source: sendoff
+  subscriber:
+    ref:
+     apiVersion: v1
+     kind: Service
+     name: goodbye-display
+---
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: hello-display
+  namespace: event-example
+spec:
+  broker: default
+  filter:
+    attributes:
+      type: greeting
+  subscriber:
+    ref:
+     apiVersion: v1
+     kind: Service
+     name: hello-display

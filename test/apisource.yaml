@@ -1,0 +1,63 @@
+# https://knative.dev/development/developer/eventing/sources/apiserversource/getting-started/
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: apiserversource
+  namespace: event-example
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: apiserversource
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: apiserversource
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: apiserversource
+subjects:
+- kind: ServiceAccount
+  name: apiserversource
+  namespace: event-example
+---
+apiVersion: sources.knative.dev/v1
+kind: ApiServerSource
+metadata:
+ name: apiserversource
+ namespace: event-example
+spec:
+ serviceAccountName: apiserversource
+ resources:
+    - apiVersion: v1
+      kind: Event
+    - apiVersion: v1
+      kind: Pod
+    - apiVersion: apps/v1
+      kind: Deployment
+ sink:
+   ref:
+     apiVersion: v1
+     kind: Service
+     name: event-display
+---

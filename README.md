@@ -13,7 +13,7 @@ Also, kube-state-metrics < v2.1 doesn't export all labels by default which means
 ```
 - --metric-labels-allowlist=pods=[*],deployments=[app.kubernetes.io/name,app.kubernetes.io/component,app.kubernetes.io/instance]
 ```
-Once kube-state-metrics has been adjusted, you will need to deploy the following servicemonitors and import the dashboards in the grafana folder.
+Once kube-state-metrics has been adjusted, you will need to deploy the following servicemonitors and import the dashboards in the [grafana](/grafana) folder.
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/monitoring/main/servicemonitor.yaml

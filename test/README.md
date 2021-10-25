@@ -6,7 +6,7 @@ Please follow the following examples at:
 - https://knative.dev/development/developer/eventing/sources/ping-source/
 
 
-For the broker/trigger, run this command on the busybox to generate many requests.
+For the broker/trigger, run this command on the curl pod (pod.yaml) to generate requests.
 
 
 ```

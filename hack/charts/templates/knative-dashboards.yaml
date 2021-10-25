@@ -8,6 +8,8 @@ metadata:
 data:
   knative-eventing-broker.json: |
 {{ .Files.Get "dashboards/knative-eventing-broker.json" | indent 4 }}
+  knative-eventing-source.json: |
+{{ .Files.Get "dashboards/knative-eventing-source.json" | indent 4 }}
 ---
 apiVersion: v1
 kind: ConfigMap

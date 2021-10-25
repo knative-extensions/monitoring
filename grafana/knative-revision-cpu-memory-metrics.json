@@ -213,7 +213,7 @@
     "schemaVersion": 30,
     "style": "dark",
     "tags": [
-      "Knative"
+      "knative"
     ],
     "templating": {
       "list": [

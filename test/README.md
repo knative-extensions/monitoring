@@ -1,17 +1,17 @@
-There some basic manifests in here that create knative resources that are being targeted by the Service/Pod Monitors.
+The test resources under `test/config` are for debugging the Service and Pod Monitors.
 
-Please follow the following examples at:
+These test resources follow the examples from:
 - https://knative.dev/development/developer/eventing/sources/apiserversource/getting-started/
 - https://knative.dev/docs/eventing/getting-started/
 - https://knative.dev/development/developer/eventing/sources/ping-source/
 
+To spin up a test kind cluster run:
 
-For the broker/trigger, run this command on the curl pod (pod.yaml) to generate requests.
+`./test/setup-kind.sh`
 
 
-```
-for i in `seq 1 200000`; do  curl -s "http://broker-ingress.knative-eventing.svc.cluster.local/event-example/default"   -X POST   -H "Ce-Id: say-hello-goodbye"   -H "Ce-Specversion: 1.0"   -H "Ce-Type: greeting"   -H "Ce-Source: sendoff"   -H "Content-Type: application/json"   -d '{"msg":"Hello Knative! Goodbye Knative!"}'; done
+To seed the cluster with some initial data run:
 
-for i in `seq 1 200000`; do  curl -v "http://broker-ingress.knative-eventing.svc.cluster.local/event-example/default"   -X POST   -H "Ce-Id: say-goodbye"   -H "Ce-Specversion: 1.0"   -H "Ce-Type: not-greeting"   -H "Ce-Source: sendoff"   -H "Content-Type: application/json"   -d '{"msg":"Goodbye Knative!"}'; done
-
-```
+`
+./test/seed-data.sh
+`

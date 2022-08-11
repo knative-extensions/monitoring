@@ -69,7 +69,7 @@ spec:
     - knative-serving
   selector:
     matchLabels:
-      app: activator
+      app: webhook
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor

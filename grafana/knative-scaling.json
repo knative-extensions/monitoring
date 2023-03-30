@@ -314,7 +314,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(kube_pod_container_resource_requests_cpu_cores{namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
+            "expr": "sum(kube_pod_container_resource_requests{resource=\"cpu\", namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
             "format": "time_series",
             "interval": "",
             "intervalFactor": 1,
@@ -329,7 +329,7 @@
             "refId": "B"
           },
           {
-            "expr": "sum(kube_pod_container_resource_limits_cpu_cores{namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
+            "expr": "sum(kube_pod_container_resource_limits{resource=\"cpu\", namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
             "format": "time_series",
             "intervalFactor": 1,
             "legendFormat": "Core limit",
@@ -421,7 +421,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(kube_pod_container_resource_requests_memory_bytes{namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
+            "expr": "sum(kube_pod_container_resource_requests{resource=\"memory\", namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
             "format": "time_series",
             "interval": "",
             "intervalFactor": 1,
@@ -437,9 +437,10 @@
             "refId": "B"
           },
           {
-            "expr": "sum(kube_pod_container_resource_limits_memory_bytes{namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
+            "expr": "sum(kube_pod_container_resource_limits{resource=\"memory\", namespace=\"$namespace\", pod=~\"$revision-deployment-.*\"})",
             "format": "time_series",
             "intervalFactor": 1,
+            "legendFormat": "Memory limit",
             "refId": "C"
           }
         ],

@@ -4866,10 +4866,10 @@ data:
                 "refId": "A"
               },
               {
-                "expr": "sum(autoscaler_observed_pods{namespace_name=\"$namespace\", configuration_name=\"$configuration\", revision_name=\"$revision\"})",
+                "expr": "sum(autoscaler_actual_pods{namespace_name=\"$namespace\", configuration_name=\"$configuration\", revision_name=\"$revision\"})",
                 "format": "time_series",
                 "intervalFactor": 1,
-                "legendFormat": "Observed Pods",
+                "legendFormat": "Actual Pods",
                 "refId": "B"
               }
             ],

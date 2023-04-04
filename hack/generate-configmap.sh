@@ -16,7 +16,6 @@
 # limitations under the License.
 
 rm -rf hack/charts/dashboards
-mkdir hack/charts/dashboards
 cp -r grafana/ hack/charts/dashboards
 helm template hack/charts/ > grafana/dashboards.yaml
 sed -i.bak '/knative-dashboards.yaml/d' grafana/dashboards.yaml

@@ -9,7 +9,7 @@ metadata:
 spec:
   endpoints:
   - interval: 30s
-    port: http-metrics
+    port: metrics
   namespaceSelector:
     matchNames:
     - knative-serving
@@ -27,7 +27,7 @@ metadata:
 spec:
   endpoints:
   - interval: 30s
-    port: http-metrics
+    port: metrics
   namespaceSelector:
     matchNames:
     - knative-serving
@@ -45,7 +45,7 @@ metadata:
 spec:
   endpoints:
   - interval: 30s
-    port: http-metrics
+    port: metrics
   namespaceSelector:
     matchNames:
     - knative-serving
@@ -63,7 +63,7 @@ metadata:
 spec:
   endpoints:
   - interval: 30s
-    port: http-metrics
+    port: metrics
   namespaceSelector:
     matchNames:
     - knative-serving

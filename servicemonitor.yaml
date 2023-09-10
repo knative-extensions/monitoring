@@ -8,7 +8,9 @@ metadata:
   namespace: knative-serving
 spec:
   endpoints:
-  - interval: 30s
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
     port: metrics
   namespaceSelector:
     matchNames:
@@ -26,7 +28,9 @@ metadata:
   namespace: knative-serving
 spec:
   endpoints:
-  - interval: 30s
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
     port: metrics
   namespaceSelector:
     matchNames:
@@ -44,7 +48,9 @@ metadata:
   namespace: knative-serving
 spec:
   endpoints:
-  - interval: 30s
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
     port: metrics
   namespaceSelector:
     matchNames:
@@ -62,7 +68,9 @@ metadata:
   namespace: knative-serving
 spec:
   endpoints:
-  - interval: 30s
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
     port: metrics
   namespaceSelector:
     matchNames:
@@ -80,7 +88,9 @@ metadata:
   namespace: knative-eventing
 spec:
   endpoints:
-  - interval: 30s
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
     port: http-metrics
   namespaceSelector:
     matchNames:
@@ -98,7 +108,9 @@ metadata:
   namespace: knative-eventing
 spec:
   endpoints:
-  - interval: 30s
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
     port: http-metrics
   namespaceSelector:
     matchNames:
@@ -122,7 +134,9 @@ spec:
     matchNames:
     - knative-eventing
   podMetricsEndpoints:
-  - port: metrics
+  - honorLabels: true
+    path: /metrics
+    port: metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
@@ -137,7 +151,9 @@ spec:
     matchNames:
     - knative-eventing
   podMetricsEndpoints:
-  - port: metrics
+  - honorLabels: true
+    path: /metrics
+    port: metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
@@ -152,7 +168,9 @@ spec:
     matchNames:
     - knative-eventing
   podMetricsEndpoints:
-  - port: metrics
+  - honorLabels: true
+    path: /metrics
+    port: metrics
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
@@ -164,6 +182,8 @@ spec:
     any: true
   selector:
     matchLabels:
-     eventing.knative.dev/source: apiserver-source-controller
+      eventing.knative.dev/source: apiserver-source-controller
   podMetricsEndpoints:
-  - port: metrics
+  - honorLabels: true
+    path: /metrics
+    port: metrics

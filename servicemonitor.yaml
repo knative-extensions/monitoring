@@ -11,7 +11,7 @@ spec:
   - honorLabels: true
     interval: 30s
     path: /metrics
-    port: metrics
+    port: http-metrics
   namespaceSelector:
     matchNames:
     - knative-serving
@@ -31,7 +31,7 @@ spec:
   - honorLabels: true
     interval: 30s
     path: /metrics
-    port: metrics
+    port: http-metrics
   namespaceSelector:
     matchNames:
     - knative-serving
@@ -51,7 +51,7 @@ spec:
   - honorLabels: true
     interval: 30s
     path: /metrics
-    port: metrics
+    port: http-metrics
   namespaceSelector:
     matchNames:
     - knative-serving
@@ -71,7 +71,7 @@ spec:
   - honorLabels: true
     interval: 30s
     path: /metrics
-    port: metrics
+    port: http-metrics
   namespaceSelector:
     matchNames:
     - knative-serving

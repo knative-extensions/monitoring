@@ -5,7 +5,7 @@ metadata:
   name: knative-eventing-dashboards
   namespace: knative-eventing
   labels:
-    grafana_dashboard: "true"
+    grafana_dashboard: "1"
 data:
   knative-eventing-broker.json: |
     {
@@ -1986,7 +1986,7 @@ metadata:
   name: knative-serving-dashboards
   namespace: knative-serving
   labels:
-    grafana_dashboard: "true"
+    grafana_dashboard: "1"
 data:
   knative-revision-cpu-memory-metrics.json: |
     {

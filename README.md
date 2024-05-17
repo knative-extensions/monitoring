@@ -1,4 +1,6 @@
 # Knative Monitoring
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fknative-extensions%2Fmonitoring.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fknative-extensions%2Fmonitoring?ref=badge_shield)
+
 
 This repository contains Grafana Dashboards and Prometheus Scraping configurations to monitor Knative.
 
@@ -18,3 +20,6 @@ Once kube-state-metrics has been adjusted, you will need to deploy the following
 ```
 kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/monitoring/main/servicemonitor.yaml
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fknative-extensions%2Fmonitoring.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fknative-extensions%2Fmonitoring?ref=badge_large)

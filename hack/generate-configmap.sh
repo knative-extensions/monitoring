@@ -15,8 +15,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-rm -rf hack/charts/dashboards
-cp -r grafana/ hack/charts/dashboards
-helm template hack/charts/ > grafana/dashboards.yaml
-sed -i.bak '/knative-dashboards.yaml/d' grafana/dashboards.yaml
-rm -rf grafana/*.bak
+# rm -rf hack/charts/dashboards
+# cp -r grafana/ hack/charts/dashboards
+# helm template hack/charts/ > grafana/dashboards.yaml
+# sed -i.bak '/knative-dashboards.yaml/d' grafana/dashboards.yaml
+# rm -rf grafana/*.bak
+
+
+
+jsonnet -J vendor -e '
+  local e = import "dashboards/lib/serving-efficiency.libsonnet";
+  local r = import "dashboards/lib/serving-reconciler.libsonnet";
+
+  {
+    apiVersion: "v1",
+    kind: "ConfigMap",
+    metadata: {
+      name: "serving-dashboards",
+      namespace: "knative-serving",
+      labels: { grafana_dashboard: "1" },
+    },
+    data: {
+    "knative-serving-efficiency.json": std.manifestJson(e),
+    "knative-serving-reconciler.json": std.manifestJson(r),
+    },
+  }
+' > dashboards/serving.json
+

@@ -1,4 +1,0 @@
-apiVersion: v2
-name: knative
-version: 0.0.1
-# These values are the bare minimum for a valid Chart, but they are not used.

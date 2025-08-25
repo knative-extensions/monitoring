@@ -8,6 +8,8 @@ kubectl port-forward \
 kubectl port-forward \
   -n observability svc/knative-grafana 3000:80 &
 
+kubectl port-forward \
+  -n observability svc/jaeger-collector 16686:16686 &
 
 echo "Port forwards started. Press Enter to stop..."
 read

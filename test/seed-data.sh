@@ -5,6 +5,9 @@ kubectl wait --for=condition=Ready=true ksvc/hello --timeout=60s -n event-exampl
 SERVING_LB=$(kubectl get svc/kourier -n kourier-system -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
 EVENTING_LB=$(kubectl get svc/broker-ingress -n knative-eventing -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
+echo SERVING_LB is $SERVING_LB
+echo EVENTING_LB is $EVENTING_LB
+
 echo Hitting Knative Service Endpoint
 
 targets="$(mktemp)"

@@ -24,8 +24,8 @@
 
 
 jsonnet -J vendor -e '
-  local e = import "dashboards/lib/serving-efficiency.libsonnet";
-  local r = import "dashboards/lib/serving-reconciler.libsonnet";
+  local e = import "dashboards/serving-efficiency.libsonnet";
+  local r = import "dashboards/serving-reconciler.libsonnet";
 
   {
     apiVersion: "v1",
@@ -40,5 +40,5 @@ jsonnet -J vendor -e '
     "knative-serving-reconciler.json": std.manifestJson(r),
     },
   }
-' > dashboards/serving.json
+' > config/configmap-serving-dashboard.json
 

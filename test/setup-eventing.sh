@@ -6,7 +6,7 @@ export SCRIPT_DIR="$( dirname -- "${BASH_SOURCE[0]}" )"
 
 export URL="https://github.com/knative/eventing/releases/latest/download"
 
-if [[ -n $LATEST_BUILD ]]; then
+if [[ -n $NIGHTLY_BUILD ]]; then
   echo "Using latest nightly build"
   URL="https://storage.googleapis.com/knative-nightly/eventing/latest"
 fi

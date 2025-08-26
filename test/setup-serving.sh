@@ -7,7 +7,7 @@ export SCRIPT_DIR="$( dirname -- "${BASH_SOURCE[0]}" )"
 export URL="https://github.com/knative/serving/releases/latest/download"
 export KOURIER_URL="https://github.com/knative-extensions/net-kourier/releases/latest/download"
 
-if [[ -n "$LATEST_BUILD" ]]; then
+if [[ -n "$NIGHTLY_BUILD" ]]; then
   echo "Using latest nightly build"
   URL="https://storage.googleapis.com/knative-nightly/serving/latest"
   KOURIER_URL="https://storage.googleapis.com/knative-nightly/net-kourier/latest"

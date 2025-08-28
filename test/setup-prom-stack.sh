@@ -11,6 +11,6 @@ helm install knative \
     prometheus-community/kube-prometheus-stack \
   --create-namespace \
   --namespace observability \
-  -f ${SCRIPT_DIR}/../config/promstack-values.yaml
+  -f ${SCRIPT_DIR}/../promstack-values.yaml
 
 

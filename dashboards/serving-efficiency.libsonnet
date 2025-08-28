@@ -2,9 +2,9 @@ local g = import 'g.libsonnet';
 
 local row = g.panel.row;
 
-local panels = import './lib-panels.libsonnet';
-local variables = import './variables.libsonnet';
-local queries = import './queries.libsonnet';
+local panels = import './lib/panels.libsonnet';
+local variables = import './lib/variables.libsonnet';
+local queries = import './lib/queries.libsonnet';
 
 local labels = { namespace: 'knative-serving' };
 

@@ -3,7 +3,7 @@ local q = g.query.prometheus;
 
 local variables = import './variables.libsonnet';
 
-local query = import './lib-query.libsonnet';
+local query = import './query.libsonnet';
 local sum = query.sum;
 local rate = query.rate;
 local irate = query.irate;

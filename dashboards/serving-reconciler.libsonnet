@@ -1,17 +1,14 @@
-local g = import 'g.libsonnet';
+local g = import './lib/g.libsonnet';
 
 local row = g.panel.row;
 
-local panels = import './lib-panels.libsonnet';
-local variables = import './variables.libsonnet';
-local queries = import './queries.libsonnet';
+local panels = import './lib/panels.libsonnet';
+local variables = import './lib/variables.libsonnet';
 
 local labels = { namespace: 'knative-serving' };
 
-local q = (import './queries.libsonnet').queries(labels);
-
 local reconciler(name, labels) =
-  local q = (import './queries.libsonnet').queries(labels);
+  local q = (import './lib/queries.libsonnet').queries(labels);
 
   row.new(name)
   + row.withPanels([

@@ -61,48 +61,17 @@ spec:
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
-  name: imc-controller
+  name: eventing-webhook
+  labels:
+    app: eventing-webhook
   namespace: knative-eventing
 spec:
   selector:
     matchLabels:
-      messaging.knative.dev/role: controller
+      app: eventing-webhook
   namespaceSelector:
     matchNames:
     - knative-eventing
-  podMetricsEndpoints:
-  - honorLabels: true
-    path: /metrics
-    port: metrics
----
-apiVersion: monitoring.coreos.com/v1
-kind: PodMonitor
-metadata:
-  name: ping-source
-  namespace: knative-eventing
-spec:
-  selector:
-    matchLabels:
-      eventing.knative.dev/source: ping-source-controller
-  namespaceSelector:
-    matchNames:
-    - knative-eventing
-  podMetricsEndpoints:
-  - honorLabels: true
-    path: /metrics
-    port: metrics
----
-apiVersion: monitoring.coreos.com/v1
-kind: PodMonitor
-metadata:
-  name: apiserver-source
-  namespace: knative-eventing
-spec:
-  namespaceSelector:
-    any: true
-  selector:
-    matchLabels:
-      eventing.knative.dev/source: apiserver-source-controller
   podMetricsEndpoints:
   - honorLabels: true
     path: /metrics

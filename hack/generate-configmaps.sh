@@ -23,7 +23,7 @@
 
 
 
-jsonnet -J vendor -e '
+jsonnet -J vendor -J dashboards/lib -e '
   local e = import "dashboards/serving-efficiency.libsonnet";
   local r = import "dashboards/serving-reconciler.libsonnet";
 
@@ -41,4 +41,22 @@ jsonnet -J vendor -e '
     },
   }
 ' > config/configmap-serving-dashboard.json
+
+
+jsonnet -J vendor -J dashboards/lib -e '
+  local e = import "dashboards/eventing-efficiency.libsonnet";
+
+  {
+    apiVersion: "v1",
+    kind: "ConfigMap",
+    metadata: {
+      name: "eventing-dashboards",
+      namespace: "knative-eventing",
+      labels: { grafana_dashboard: "1" },
+    },
+    data: {
+    "knative-eventing-efficiency.json": std.manifestJson(e),
+    },
+  }
+' > config/configmap-eventing-dashboard.json
 

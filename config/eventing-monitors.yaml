@@ -1,0 +1,78 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: broker-filter
+  name: broker-filter
+  namespace: knative-eventing
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
+    port: http-metrics
+  namespaceSelector:
+    matchNames:
+    - knative-eventing
+  selector:
+    matchLabels:
+      eventing.knative.dev/brokerRole: filter
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: broker-ingress
+  name: broker-ingress
+  namespace: knative-eventing
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
+    port: http-metrics
+  namespaceSelector:
+    matchNames:
+    - knative-eventing
+  selector:
+    matchLabels:
+      eventing.knative.dev/brokerRole: ingress
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: eventing-controller
+  labels:
+    app: eventing-controller
+  namespace: knative-eventing
+spec:
+  selector:
+    matchLabels:
+      app: eventing-controller
+  namespaceSelector:
+    matchNames:
+    - knative-eventing
+  podMetricsEndpoints:
+  - honorLabels: true
+    path: /metrics
+    port: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: eventing-webhook
+  labels:
+    app: eventing-webhook
+  namespace: knative-eventing
+spec:
+  selector:
+    matchLabels:
+      app: eventing-webhook
+  namespaceSelector:
+    matchNames:
+    - knative-eventing
+  podMetricsEndpoints:
+  - honorLabels: true
+    path: /metrics
+    port: metrics

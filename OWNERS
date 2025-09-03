@@ -1,7 +1,9 @@
 approvers:
-  - technical-oversight-committee
-  - knative-release-leads
-  - operations-wg-leads
-  - operations-writers
+- technical-oversight-committee
+- knative-release-leads
+- operations-wg-leads
+- operations-writers
+- serving-writers
+- eventing-writers
 reviewers:
 - operations-writers

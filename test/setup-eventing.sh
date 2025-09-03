@@ -37,5 +37,6 @@ kubectl patch configmap/config-observability \
 
 kubectl rollout restart deployments -n knative-eventing
 kubectl apply -f config/eventing-monitors.yaml
+kubectl apply -f config/configmap-eventing-dashboard.json
 
 kubectl wait --for=condition=Available -n knative-eventing --all deployments --timeout=120s

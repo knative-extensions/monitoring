@@ -13,11 +13,11 @@ Also, `kube-state-metrics` doesn't export all labels by default which means you 
 - --metric-labels-allowlist=pods=[*],deployments=[app.kubernetes.io/name,app.kubernetes.io/component,app.kubernetes.io/instance]
 ```
 
-Once `kube-state-metrics` has been adjusted, you will need to deploy the following servicemonitors and import the dashboards in the [grafana](/grafana) folder.
+Once `kube-state-metrics` has been adjusted, you will need to deploy the following servicemonitors and import the dashboards in the [config](/config) folder.
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/monitoring/main/config/serving-monitors.yaml
-kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/monitoring/main/config/eventing-monitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/knative-extensions/monitoring/refs/heads/main/config/serving-monitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/knative-extensions/monitoring/refs/heads/main/config/eventing-monitors.yaml
 ```
 
 This repo uses the jsonnet config language to make things configurable. Visit https://github.com/google/jsonnet to install the CLI.
@@ -25,6 +25,6 @@ This repo uses the jsonnet config language to make things configurable. Visit ht
 
 This repository takes influence from:
 
-Istio Dashboards: https://github.com/istio/istio/tree/release-1.27/manifests/addons/dashboards/lib
-Grafana Controller Runtime Example: https://github.com/grafana/grafonnet/blob/5a8f3d6aa89b7e7513528371d2d1265aedc844bc/examples/runtimeDashboard/queries.libsonnet
-OTel Collector Dashboards: https://github.com/monitoringartist/opentelemetry-collector-monitoring/blob/main/dashboard/opentelemetry-collector-dashboard.json
+- Istio Dashboards: https://github.com/istio/istio/tree/release-1.27/manifests/addons/dashboards/lib
+- Grafana Controller Runtime Example: https://github.com/grafana/grafonnet/blob/5a8f3d6aa89b7e7513528371d2d1265aedc844bc/examples/runtimeDashboard/queries.libsonnet
+- OTel Collector Dashboards: https://github.com/monitoringartist/opentelemetry-collector-monitoring/blob/main/dashboard/opentelemetry-collector-dashboard.json

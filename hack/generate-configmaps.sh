@@ -60,3 +60,21 @@ jsonnet -J vendor -J dashboards/lib -e '
   }
 ' > config/configmap-eventing-dashboard.json
 
+
+jsonnet -J vendor -J dashboards/lib -e '
+  local e = import "dashboards/serving-kourier.libsonnet";
+
+  {
+    apiVersion: "v1",
+    kind: "ConfigMap",
+    metadata: {
+      name: "kourier-dashboards",
+      namespace: "knative-serving",
+      labels: { grafana_dashboard: "1" },
+    },
+    data: {
+    "knative-serving-kourier.json": std.manifestJson(e),
+    },
+  }
+' > config/configmap-kourier-dashboard.json
+

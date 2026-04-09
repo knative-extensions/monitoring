@@ -53,4 +53,7 @@ kubectl rollout restart deployments -n knative-serving
 kubectl apply -f config/serving-monitors.yaml
 kubectl apply -f config/configmap-serving-dashboard.json
 
+kubectl apply -f config/kourier-monitors.yaml
+kubectl apply -f config/configmap-kourier-dashboard.json
+
 kubectl wait --for=condition=Available -n knative-serving --all deployments

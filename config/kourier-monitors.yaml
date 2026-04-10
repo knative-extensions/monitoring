@@ -1,0 +1,20 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: kourier-gateway
+  labels:
+    app: kourier-gateway
+  namespace: kourier-system
+spec:
+  selector:
+    matchLabels:
+      app: 3scale-kourier-gateway
+  namespaceSelector:
+    matchNames:
+    - kourier-system
+  podMetricsEndpoints:
+  - honorLabels: true
+    path: /stats/prometheus
+    port: metrics
+

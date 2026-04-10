@@ -105,5 +105,104 @@ local increase = query.increase;
         ),
       ],
 
+      increase(metric, range='30d', lbls):
+        // Build the label selector string
+        local labelSelector = std.join(',', std.map(
+          function(k)
+            if std.startsWith(lbls[k], '!') then
+              '%s!="%s"' % [k, std.lstripChars(lbls[k], '!')]
+            else
+              '%s="%s"' % [k, lbls[k]],
+          std.objectFields(lbls)
+        ));
+        
+        // Return the Prometheus increase() query
+        'sum(increase(%s{%s}[%s]))' % [
+          metric,
+          labelSelector,
+          range
+        ],
+
+      rate(metric, lbls):
+        'sum(rate(%s{%s}[$__rate_interval]))' % [
+          metric,
+          std.join(',', std.map(
+            function(k)
+              if std.startsWith(lbls[k], '!') then
+                '%s!="%s"' % [k, std.lstripChars(lbls[k], '!')]
+              else
+                '%s="%s"' % [k, lbls[k]],
+            std.objectFields(lbls)
+          ))
+        ],
+
+      bytesReceived:
+        self.query(
+          '__auto',
+          self.increase('envoy_http_downstream_cx_rx_bytes_total', '$__range', namespaceLabels)
+        ),
+
+      bytesSent:
+        self.query(
+          '__auto',
+          self.increase('envoy_http_downstream_cx_tx_bytes_total', '$__range', namespaceLabels)
+        ),
+
+      requestsTotal:
+        self.query(
+          '__auto',
+          self.increase('envoy_http_downstream_rq_completed', '$__range', namespaceLabels)
+        ),
+
+      rpsTotal:
+        self.query(
+          'Total',
+          self.rate('envoy_http_downstream_rq_total', namespaceLabels)
+        ),
+
+      rpsByCode:
+        self.query(
+          '{{envoy_response_code_class}}xx',
+          'sum(rate(envoy_http_downstream_rq_xx{%s}[$__rate_interval])) by (envoy_response_code_class)' %
+          std.join(',', std.map(
+            function(k)
+              '%s="%s"' % [k, namespaceLabels[k]],
+            std.objectFields(namespaceLabels)
+          ))
+        ),
+
+      rpsByPod:
+        self.query(
+          '{{pod}}',
+          'sum(rate(envoy_http_downstream_rq_total{%s}[$__rate_interval])) by (pod)' %
+          std.join(',', std.map(
+            function(k)
+              '%s="%s"' % [k, namespaceLabels[k]],
+            std.objectFields(namespaceLabels)
+          ))
+        ),
+
+      activeRequestsByPod:
+        self.query(
+          '{{pod}}',
+          'sum(envoy_http_downstream_rq_active{%s}) by (pod)' %
+          std.join(',', std.map(
+            function(k)
+              '%s="%s"' % [k, namespaceLabels[k]],
+            std.objectFields(namespaceLabels)
+          ))
+        ),
+
+      activeRequestsTotal:
+        self.query(
+          'Total',
+          'sum(envoy_http_downstream_rq_active{%s})' %
+          std.join(',', std.map(
+            function(k)
+              '%s="%s"' % [k, namespaceLabels[k]],
+            std.objectFields(namespaceLabels)
+          ))
+        ),
+
     },
 }
